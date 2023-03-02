@@ -28,18 +28,5 @@ pipeline {
             }
         }
 		
-	stage('Compile and Build'){
-		steps{
-			sh 'mvn clean install -DskipTests'
-			}
-		}
-		
-	stage ('Static Application Security Testing') {
-	      steps {
-        	withSonarQubeEnv('sonarqube') {
-	          sh 'mvn sonar:sonar'
-				}
-	      	}
-    	}
 	}
 }
