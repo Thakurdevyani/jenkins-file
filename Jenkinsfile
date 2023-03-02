@@ -35,10 +35,10 @@ pipeline {
 	      steps {
 		      sh '''
 		      set +e
+		         '''
         	withSonarQubeEnv(credentialsId:'061a7f14-2768-41bf-be18-50ab93096213' , installationName:'SonarQubeScanner') {
 	          sh 'mvn sonar:sonar'
-		  '''
-				}
+			}
 	      	}
     	}
     
